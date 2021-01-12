@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài tập về gooffastchip</title>
+    <link rel="stylesheet" href="goodfastchip.css">
+</head>
+<body>
+
+<label class="switch">
+    <input type="checkbox" onclick="clickBtn(this.id)" name="khovl" id="good" value="1">
+    <span class="slider round"></span>
+
+</label>
+<h2>Good</h2>
+<br>
+<label class="switch">
+    <input type="checkbox" onclick="clickChip()" name="khovl" id="chip" >
+    <span class="slider round"></span>
+</label>
+<h2>Cheap</h2><br>
+<label class="switch">
+    <input type="checkbox" onclick="clickFast()" name="khovl" id="fast">
+    <span class="slider round"></span>
+</label>
+<h2>Fast</h2>
+<script>
+    let good =document.getElementById("good");
+    let fast =document.getElementById("fast");
+    let chip =document.getElementById("chip");
+    /*let checkbox = document.getElementsByName("kho vl").onclick;
+    if (checkbox[1].checked === true) {
+        if (checkbox[2].checked === true) {
+            checkbox[3].checked = false;
+        } else {
+            checkbox[3].checked = true;
+        }
+
+    } else {
+        checkbox[2].checked = true
+        checkbox[3].checked = true;
+    }*/
+    function clickGood() {
+        if (good.checked && chip.checked){
+            fast.checked = false
+        }
+    }
+    function clickChip() {
+        if (chip.checked && fast.checked){
+            good.checked = false
+        }
+    }
+    function clickFast() {
+        if (fast.checked && good.checked){
+            chip.checked = false
+        }
+    }
+
+    function clickBtn(id) {
+        switch (id){
+            case "good":
+                if (good.checked && chip.checked){
+                    fast.checked = false
+                }
+                break;
+        }
+    }
+</script>
+
+
+    </body>
+    </html>
